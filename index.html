@@ -1,141 +1,19 @@
 <html>
 <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: lightblue;
-        }
-        h1 {
-            text-align: center;
-            color: white;
-        }
-        p {
-            text-align: justify;
-            margin: 20px;
-        }
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-        }
-        button {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 10px 20px;
-            font-size: 20px;
-            background-color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: lightgreen;
-        }
-        /* 新增的樣式 */
-        .counter {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
-            font-size: 30px;
-            color: white;
-        }
-        .bubble {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: white;
-            opacity: 0;
-            transition: all 2s;
-        }
-        .bubble-text {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            font-size: 20px;
-            color: black;
-        }
-        .show {
-            opacity: 1;
-        }
-        .move {
-            transform: translate(0, -300px);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>歡迎來到我的個人介紹網站</h1>
     <img src="https://i.imgur.com/4QfKuz1.png" alt="我的照片">
     <p>你好，我是賴以宸。我是亞洲大學資工系的學生，目前致力於學習各式程式語言，平常的興趣是打桌球與運動健身，(目前只有想到這樣:D以後在繼續更新)</p>
     <button id="cheer" onclick="cheerMe()">為我加油</button>
-    <!-- 新增的元素 -->
     <div id="count" class="counter">0</div>
     <div id="bubble1" class="bubble">
         <span id="text1" class="bubble-text">+1</span>
     </div>
-    <div id="bubble2" class="bubble">
-        <span id="text2" class="bubble-text">謝謝你的支持，你也很棒！</span>
-    </div>
-    <script>
-        // 定義一些變數和常數
-        const cheer = document.getElementById("cheer"); // 按鈕元素
-        const count = document.getElementById("count"); // 計數器元素
-        const bubble1 = document.getElementById("bubble1"); // 泡泡1元素
-        const bubble2 = document.getElementById("bubble2"); // 泡泡2元素
-        const text1 = document.getElementById("text1"); // 泡泡1文字元素
-        const text2 = document.getElementById("text2"); // 泡泡2文字元素
-        const duration = 2000; // 動畫持續時間，單位毫秒
-        let counter = 0; // 計數器的值，初始為0
-
-        // 定義一個函數，當按下按鈕時執行
-        function cheerMe() {
-            // 計數器的值加1
-            counter++;
-            // 更新計數器元素的內容
-            count.textContent = counter;
-            // 顯示泡泡元素
-            bubble1.classList.add("show");
-            bubble2.classList.add("show");
-            // 將泡泡元素移動到按鈕元素的位置
-            bubble1.style.left = cheer.offsetLeft + "px";
-            bubble1.style.top = cheer.offsetTop + "px";
-            bubble2.style.left = cheer.offsetLeft + "px";
-            bubble2.style.top = cheer.offsetTop + "px";
-            // 延遲一點時間，讓泡泡元素有時間顯示
-            setTimeout(function() {
-                // 將泡泡元素往上移動
-                bubble1.classList.add("move");
-                bubble2.classList.add("move");
-                // 將泡泡1元素移動到計數器元素的位置
-                bubble1.style.left = count.offsetLeft + "px";
-                bubble1.style.top = count.offsetTop + "px";
-                // 將泡泡2元素移動到中間位置
-                bubble2.style.left = "50%";
-                bubble2.style.top = "50%";
-                // 將泡泡2元素的文字居中
-                text2.style.left = "-25px";
-                text2.style.top = "-25px";
-            }, 100);
-            // 延遲一段時間，讓動畫結束
-            setTimeout(function() {
-                // 隱藏泡泡元素
-                bubble1.classList.remove("show");
-                bubble2.classList.remove("show");
-                // 將泡泡元素恢復原位
-                bubble1.classList.remove("move");
-                bubble2.classList.remove("move");
-                // 將泡泡2元素的文字恢復原位
-                text2.style.left = "0px";
-                text2.style.top = "0px";
-            }, duration);
-        }
-    </script>
+    <div id="message" class="message">謝謝你的支持，你也很棒！</div>
+    <script src="script.js"></script>
+    <script src="snowstorm.js"></script>
 </body>
 </html>
 
