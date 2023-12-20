@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+p {
+    text-align: justify;
+    margin: 20px;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: lightgreen;
+}
+.counter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 30px;
+    color: white;
+}
+.bubble {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    transition: all 2s;
+}
+.bubble-text {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+.show {
+    opacity: 1;
+}
+.move {
+    transform: translate(0, -300px);
+}
+.message {
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    background-color: lightgreen;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
